@@ -1,5 +1,6 @@
 package com.burgan.newsapp
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
