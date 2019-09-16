@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.row_news.view.*
 
 class AdapterList( private val news: List<Article>, private val context: Context) : RecyclerView.Adapter<AdapterList.ViewHolder>() {
@@ -22,7 +23,7 @@ class AdapterList( private val news: List<Article>, private val context: Context
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.txtDetail.text = news[position].description
         holder.txtTitle.text = news[position].title
-
+        Glide.with(context).load(news[position].urlToImage).into(holder.imViewNews);
 
     }
 
