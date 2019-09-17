@@ -14,7 +14,6 @@ class ListDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_list_detail)
         setSupportActionBar(toolbar)
 
-
         title = intent.getStringExtra("txtTitle")
         txtDetail.text = intent.getStringExtra("txtDetail")
         Glide.with(this).load(intent.getStringExtra("imViewNews")).into(imViewNews)
@@ -26,8 +25,10 @@ class ListDetailActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
-
-
-
+        detailBackButton.setOnClickListener {
+            finish()
+        }
     }
+
 }
+

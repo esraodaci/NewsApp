@@ -1,7 +1,6 @@
 package com.burgan.newsapp
 
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -38,7 +37,6 @@ class ListActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "response", Toast.LENGTH_LONG).show()
             }
         })
-
 
 
     }

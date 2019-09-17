@@ -26,6 +26,7 @@ class AdapterList( private val news: List<Article>, private val context: Context
         holder.txtTitle.text = news[position].title
         holder.txtDetail.text = news[position].description
         Glide.with(context).load(news[position].urlToImage).into(holder.imViewNews)
+
         holder.recyclerViewRow.setOnClickListener {
             val intent = Intent(context,ListDetailActivity::class.java)
             intent.putExtra("txtTitle",news[position].title)

@@ -24,6 +24,13 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
+            <ImageView
+                android:id="@+id/imViewNews"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparentColorPrimary" />
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
@@ -32,10 +39,12 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay">
 
                 <ImageView
+                    android:id="@+id/detailBackButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+
                     android:layout_marginRight="@dimen/app_bar_height"
-                    app:srcCompat="@drawable/ic_action_back"
+                    app:srcCompat="@drawable/ic_action_back_button"
                     tools:ignore="VectorDrawableCompat" />
 
                 <ImageView
@@ -46,12 +55,6 @@
                     tools:ignore="VectorDrawableCompat" />
             </androidx.appcompat.widget.Toolbar>
 
-            <ImageView
-                android:id="@+id/imViewNews"
-                android:scaleType="centerCrop"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/transparentColorPrimary" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
