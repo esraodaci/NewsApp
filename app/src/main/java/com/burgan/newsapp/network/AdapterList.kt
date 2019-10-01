@@ -1,4 +1,4 @@
-package com.burgan.newsapp
+package com.burgan.newsapp.network
 
 import android.content.Context
 import android.content.Intent
@@ -8,14 +8,26 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.burgan.newsapp.R
+import com.burgan.newsapp.activities.ListDetailActivity
+import com.burgan.newsapp.database.AppDB
+import com.burgan.newsapp.database.NewsModel
+import com.burgan.newsapp.repository.NewsRepo
 import kotlinx.android.synthetic.main.row_news.view.*
 
-class AdapterList( private val news: List<Article>, private val context: Context) : RecyclerView.Adapter<AdapterList.ViewHolder>() {
+class AdapterList(private val news: List<Article>, private val context: Context) : RecyclerView.Adapter<AdapterList.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.row_news, parent, false))
+        return ViewHolder(
+            LayoutInflater.from(context).inflate(
+                R.layout.row_news,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int {
@@ -28,7 +40,7 @@ class AdapterList( private val news: List<Article>, private val context: Context
         Glide.with(context).load(news[position].urlToImage).into(holder.imViewNews)
 
         holder.recyclerViewRow.setOnClickListener {
-            val intent = Intent(context,ListDetailActivity::class.java)
+            val intent = Intent(context, ListDetailActivity::class.java)
             intent.putExtra("txtTitle",news[position].title)
             intent.putExtra("txtDetail",news[position].description)
             intent.putExtra("imViewNews",news[position].urlToImage)
@@ -43,7 +55,9 @@ class AdapterList( private val news: List<Article>, private val context: Context
         val imViewNews: ImageView = view.imViewNews
         val recyclerViewRow: FrameLayout = view.recyclerViewRow
 
+
     }
+
 
 }
 

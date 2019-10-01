@@ -1,4 +1,4 @@
-package com.burgan.newsapp
+package com.burgan.newsapp.network
 
 data class NewsResponse(
     val articles: List<Article>,
@@ -15,3 +15,4 @@ data class Article(
     val url: String,
     val urlToImage: String
 )
+

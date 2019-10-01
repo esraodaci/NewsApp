@@ -1,4 +1,4 @@
-package com.burgan.newsapp
+package com.burgan.newsapp.network
 
 
 

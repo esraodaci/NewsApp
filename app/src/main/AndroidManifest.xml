@@ -13,14 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".ListDetailActivity"
+            android:name=".activities.ListDetailActivity"
             android:label="@string/title_activity_list_detail"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ListActivity">
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".activities.ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
