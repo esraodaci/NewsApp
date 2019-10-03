@@ -14,7 +14,7 @@ class NewsViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: NewsRepo
 
     // LiveData gives us updated words when they change.
-    private val allNews: LiveData<List<NewsModel>>
+    private val allNews: List<NewsModel>
 
     init {
         val newsDAO = AppDB.getDatabase(application).NewsDAO()
@@ -22,19 +22,19 @@ class NewsViewModel(application: Application) : AndroidViewModel(application) {
         allNews = repository.allNews
     }
 
-    fun insert(news : List<Article>){
-        repository.addNews(news)
-    }
 
     fun getNewsAsync(context: Context, onSuccess: (resp: List<Article>) -> Unit, onFail: ((t: Throwable) -> Unit)? = null) {
         repository.getNewsAsync(context, onSuccess, onFail)
     }
 
-    fun deleteAll(){
-        repository.deleteAll()
+    fun hash(articles : List<Article>){
+        repository.hash(articles)
+    }
+    fun deleteAllNews(){
+        repository.deleteAllNews()
     }
 
-    fun generateHash(){
-
+    fun addAllNews(news : List<Article>){
+        repository.addNews(news)
     }
 }

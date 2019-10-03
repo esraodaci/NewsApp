@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 
 
-@Database(entities = [NewsModel::class],version = 1)
+@Database(entities = [NewsModel::class],version = 3, exportSchema = false)
 
 abstract class AppDB : RoomDatabase() {
 

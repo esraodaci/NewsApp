@@ -17,6 +17,7 @@ class ListActivity : AppCompatActivity() {
 
         Stetho.initializeWithDefaults(this)
 
+
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
@@ -24,6 +25,8 @@ class ListActivity : AppCompatActivity() {
             val adapter = AdapterList(articles, this)
             recyclerView.adapter = adapter
         })
+
+
 
     }
 
