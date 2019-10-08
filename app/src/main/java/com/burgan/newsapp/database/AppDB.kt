@@ -7,10 +7,9 @@ import androidx.room.RoomDatabase
 
 
 
-@Database(entities = [NewsModel::class],version = 3, exportSchema = false)
+@Database(entities = [NewsModel::class], version = 4, exportSchema = false)
 
 abstract class AppDB : RoomDatabase() {
-
 
     abstract fun NewsDAO(): NewsDAO
 
@@ -31,7 +30,9 @@ abstract class AppDB : RoomDatabase() {
                     AppDB::class.java,
                     "cache"
                 )
-                    .allowMainThreadQueries().build()
+                    .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 return instance
             }

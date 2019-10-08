@@ -17,4 +17,11 @@ class SharedPreference (val context: Context) {
 
         return sharedPreference.getString(KEY_NAME, null)
     }
+
+    fun delete(){
+        var editor = sharedPreference.edit()
+        editor.putString("cacheHash","empty")
+
+        return editor.apply()
+    }
 }

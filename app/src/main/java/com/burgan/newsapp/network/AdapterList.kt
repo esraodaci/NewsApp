@@ -18,7 +18,9 @@ import com.burgan.newsapp.database.NewsModel
 import com.burgan.newsapp.repository.NewsRepo
 import kotlinx.android.synthetic.main.row_news.view.*
 
-class AdapterList(private val news: List<Article>, private val context: Context) : RecyclerView.Adapter<AdapterList.ViewHolder>() {
+class AdapterList(private val context: Context) : RecyclerView.Adapter<AdapterList.ViewHolder>() {
+
+    private val news: MutableList<Article> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -49,13 +51,16 @@ class AdapterList(private val news: List<Article>, private val context: Context)
     }
 
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
-
         val txtTitle: TextView= view.txtTitle
         val txtDetail: TextView = view.txtDetail
         val imViewNews: ImageView = view.imViewNews
         val recyclerViewRow: FrameLayout = view.recyclerViewRow
+    }
 
-
+    fun setItems(newsToSet: List<Article>){
+        news.clear()
+        news.addAll(newsToSet)
+        notifyDataSetChanged()
     }
 
 

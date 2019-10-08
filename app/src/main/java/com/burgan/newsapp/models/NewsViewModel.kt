@@ -8,8 +8,9 @@ import com.burgan.newsapp.database.AppDB
 import com.burgan.newsapp.database.NewsModel
 import com.burgan.newsapp.network.Article
 import com.burgan.newsapp.repository.NewsRepo
+import com.burgan.newsapp.repository.SharedPreference
 
-class NewsViewModel(application: Application) : AndroidViewModel(application) {
+class NewsViewModel( application: Application) : AndroidViewModel(application) {
 
     private val repository: NewsRepo
 
@@ -23,18 +24,18 @@ class NewsViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    fun getNewsAsync(context: Context, onSuccess: (resp: List<Article>) -> Unit, onFail: ((t: Throwable) -> Unit)? = null) {
-        repository.getNewsAsync(context, onSuccess, onFail)
+    fun getNewsAsync(context: Context,
+                     onSuccess: (resp: List<Article>) -> Unit,
+                     onCache: (resp : List<Article>) -> Unit,
+                     onFail: ((t: Throwable) -> Unit)? = null) {
+        repository.getNewsAsync(context, onSuccess,onCache , onFail)
     }
 
-    fun hash(articles : List<Article>){
-        repository.hash(articles)
-    }
-    fun deleteAllNews(){
+    fun deleteCache(context: Context){
         repository.deleteAllNews()
+        SharedPreference(context).delete()
+
     }
 
-    fun addAllNews(news : List<Article>){
-        repository.addNews(news)
-    }
+
 }

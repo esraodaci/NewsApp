@@ -15,7 +15,7 @@
         <activity
             android:name=".activities.ListDetailActivity"
             android:label="@string/title_activity_list_detail"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
         <activity android:name=".activities.ListActivity">

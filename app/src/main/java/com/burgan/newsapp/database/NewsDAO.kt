@@ -15,4 +15,7 @@ interface NewsDAO {
 
     @Query("DELETE FROM cache")
     fun deleteAllNews()
+
+    @Query(value = "update cache set description = 'Data from cache' where id = 11")
+    fun update()
 }

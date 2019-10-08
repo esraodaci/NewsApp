@@ -1,4 +1,5 @@
 <resources>
+    <string name="menu_update">Update Cache</string>
     <string name="app_name" translatable="true">News App</string>
     <string name="title_activity_list_detail" translatable="false">ListDetail</string>
     <string name="large_text_2" translatable="false">
@@ -90,7 +91,7 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="action_settings" translatable="false">Settings</string>
+    <string name="action_settings" translatable="false">Update Cache</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -181,4 +182,6 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+
+    <string name="progressBar_text">Please wait ...</string>
 </resources>
